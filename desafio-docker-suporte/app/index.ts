@@ -7,6 +7,8 @@ export async function createApp() {
 
     const sqlInsert = 'INSERT INTO `characterSW`(`name`) VALUES (?)';
 
+
+
     for (const character of characters) {
         await queryDatabase(sqlInsert, [character]);
     }

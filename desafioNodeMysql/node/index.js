@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const mysql = require('mysql2')
 
 const port = 3000
 
@@ -10,9 +11,19 @@ const config = {
   database: 'database'
 }
 
+var connection = mysql.createConnection(config);
 
-const mysql = require('mysql')
-const connection = mysql.createConnection(config)
+connection.connect(function(err) {
+  if (err) {
+    console.log('Error connecting to Database', err);
+    return;
+  } 
+
+console.log('connection establishad')
+
+})
+
+
 
 
 const insert = sqlInsert(connection)

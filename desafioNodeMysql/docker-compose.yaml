@@ -1,4 +1,4 @@
-version: '3'
+version: '3' 
 
 services:
 
@@ -11,8 +11,8 @@ services:
       - ./node:/usr/src/app
     tty: true
     depends_on:
-      database:
-        condition: "service_healthy"
+      - database
+        # condition: "service_healthy"
 
   nginx:
     image: nginx:1.15.0-alpine
@@ -31,15 +31,16 @@ services:
     restart: always
     tty: true
     volumes:
-      - mysql:/var/lib/mysql
+      - ./mysql:/var/lib/mysql
     environment:
       - MYSQL_DATABASE=database
+      - MYSQL_HOST=localhost
       - MYSQL_ROOT_PASSWORD=root
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
-      interval: 5s
-      timeout: 10s
-      retries: 3
+    # healthcheck:
+    #   test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
+    #   interval: 5s
+    #   timeout: 10s
+    #   retries: 3
 
 volumes:
   mysql:
