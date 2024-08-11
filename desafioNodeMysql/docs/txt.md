@@ -14,25 +14,22 @@ database exited with code 0
 database            | 2024-08-11 04:56:59+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
 
   
-# Problema Enfrentado com Docker Compose e Banco de Dados
+1. # Problema Enfrentado com Docker Compose e Banco de Dados
 
 Erro de Comunicação com o Banco de Dados:
-Ao executar o comando docker-compose, enfrentei erros na comunicação com o banco de dados. O erro indicava que o cliente de conexão estava tendo dificuldades para acessar o banco de dados.
+Ao executar o comando docker-compose, você poderá enfrentar erros na comunicação com o banco de dados. O erro indica que o cliente de conexão estava tendo dificuldades para acessar o banco de dados.
 
-# Solução Tentada:
+2. # Solução Tentada:
 
-Após várias tentativas sem sucesso, decidi alterar o cliente de conexão MySQL para mysql2. O mysql2 é um cliente que já havia sido utilizado em desafios anteriores e apresentou uma maior estabilidade.
-Essa alteração resolveu o problema de conexão com o banco de dados, permitindo que o sistema se conectasse sem problemas.
+Alterar o cliente de conexão MySQL para mysql2. O mysql2 é um cliente que já foi utilizado em desafios anteriores e apresentou uma maior estabilidade.
+Essa alteração resolverá o problema de conexão com o banco de dados, permitindo que o sistema se conecte sem problemas.
 
-# Próxima Alteração - Banco de Dados:
+3. # Próxima Alteração - Banco de Dados:
 
-Em seguida, percebi que o banco de dados estava incompleto, especificamente faltava a criação da tabela people.
-Após a criação da tabela people, ...
+Se o banco de dados estiver incompleto, especificamente faltando a criação da tabela people.
+siga os demais passos para solucionar.
 
-  
-
-
-** Iniciando os Containers**
+**Iniciando os Containers**
 
 - **Comando**:
   ```bash
@@ -100,7 +97,7 @@ Após a criação da tabela people, ...
 
 ---
 
-**8. Acessando a Aplicação**
+1. **Acessando a Aplicação**
 
 - **URL**: [http://localhost:8080](http://localhost:8080)
 - **Função**: Acesse a aplicação através deste endpoint para verificar se tudo está funcionando conforme o esperado.

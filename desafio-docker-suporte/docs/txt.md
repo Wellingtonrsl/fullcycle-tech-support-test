@@ -1,4 +1,4 @@
-### Passo a Passo para Resolver o Problema do Teste
+### Resolvendo o Problema do Teste
 
 ---
 
